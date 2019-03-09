@@ -3,7 +3,7 @@
 This is where we keep the Metanorma CSAND model definitions.
 
 The CSA Normal Document ("CSAND") format is an instance of the
-https://github.com/riboseinc/standoc-models[Metanorma StandardDocument model].
+https://github.com/metanorma/standoc-models[Metanorma StandardDocument model].
 Details of the general model can be found on its page.
 
 == CSA Normal Document Model
