@@ -1,0 +1,76 @@
+@startuml Csand_NormalDocument
+/'
+Diagram:        Csand_NormalDocument
+DateCreate:     23/08/2018
+Description:    This is where we keep the Metanorma CSAND model definitions.
+                The CSA Normal Document ("CSAND") format is an instance of the Metanorma StandardDocument model.
+                Details of the general model can be found on its page.
+
+Hystory of changes:
+> DD/MM/YYYY
+    -
+    -
+'/
+
+'******* CONFIGURATION ************************************************
+!include style.uml.inc
+
+'******* CLASS DEFINITION *********************************************
+class StandardDocument <<StandardDocument>> {
+
+}
+
+class CSANormalDocument{
+    +bibdata: CSABibliographicItem
+    +foreword: HierarchicalSection[0..1]
+    +introduction: HierarchicalSection[0..1]
+    +sections: ClauseSection[1..*]
+    +annex: AnnexSection[0..*]
+}
+
+class BibliographicItem <<StandardDocument>>{
+
+}
+
+class CSABibliographicItem{
+    +committee: CSACommittee
+    +type: CSADocumentType
+}
+
+class CSACommittee{
+    +type: CSACommitteeType
+    +name: String
+}
+
+enum CSACommitteeType <<enumeration>>{
+    technical
+    provisional
+}
+
+enum CSADocumentType <<enumeration>>{
+    guidance
+    proposal
+    standard
+    report
+    whitepaper
+    charter
+    policy
+    glossary
+    case_study
+}
+
+'******* NOTES ********************************************************
+
+
+'******* CLASS RELATIONS **********************************************
+StandardDocument <|-- CSANormalDocument
+BibliographicItem <|-- CSABibliographicItem
+
+CSANormalDocument <-- CSABibliographicItem
+
+CSABibliographicItem <-- CSACommittee
+CSABibliographicItem <-- CSADocumentType
+
+CSACommittee <-right- CSACommitteeType
+
+@enduml
