@@ -1,0 +1,23 @@
+name: CSABibliographicItem
+modelType: class
+definition: |
+
+attributes:
+  committee:
+    definition:
+    type: CSACommittee
+  type:
+    definition:
+    type: CSADocumentType
+relations:
+  - target: BibliographicItem
+    relationship:
+      target:
+        type: inheritance
+    direction: up
+  - target: CSANormalDocument
+    relationship:
+      target:
+        type: direct
+    direction: up
+    

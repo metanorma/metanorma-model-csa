@@ -1,0 +1,22 @@
+name: CSADocumentType
+modelType: enum
+type: enumeration
+values:
+  guidance:
+    definition: 
+  proposal:
+    definition: 
+  standard:
+    definition: 
+  report:
+    definition: 
+  whitepaper:
+    definition: 
+  charter:
+    definition: 
+  policy:
+    definition: 
+  glossary:
+    definition: 
+  case_study:
+    definition: 
