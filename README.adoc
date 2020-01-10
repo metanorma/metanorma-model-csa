@@ -1,11 +1,11 @@
-= Metanorma CSA Normal Document ("CSAND") Models
+= Metanorma-CSA Models
 
-This is where we keep the Metanorma CSAND model definitions.
+This is where we keep the Metanorma-CSA model definitions.
 
-The CSA Normal Document ("CSAND") format is an instance of the
+The Metanorma CSA format is an instance of the
 https://github.com/metanorma/metanorma-model-standoc[Metanorma StandardDocument model].
 Details of the general model can be found on its page.
 
-== CSA Normal Document Model
+== CSA Document Model
 
 image::images/Csand_NormalDocument.png[]
