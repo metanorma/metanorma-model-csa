@@ -1,0 +1,83 @@
+diagram Csand_NormalDocument {
+  
+  
+  class StandardDocument <<StandardDocument>> {
+  
+  }
+  
+  class CSANormalDocument{
+      +bibdata: CSABibliographicItem
+      +foreword: HierarchicalSection[0..1]
+      +introduction: HierarchicalSection[0..1]
+      +sections: ClauseSection[1..*]
+      +annex: AnnexSection[0..*]
+  }
+  
+  class BibliographicItem <<StandardDocument>>{
+  
+  }
+  
+  class CSABibliographicItem{
+      +committee: CSACommittee
+      +type: CSADocumentType
+  }
+  
+  class CSACommittee{
+      +type: CSACommitteeType
+      +name: String
+  }
+  
+  enum CSACommitteeType <<enumeration>>{
+      technical
+      provisional
+  }
+  
+  enum CSADocumentType <<enumeration>>{
+      guidance
+      proposal
+      standard
+      report
+      whitepaper
+      charter
+      policy
+      glossary
+      case_study
+  }
+  
+  
+  
+  association {
+    owner StandardDocument
+    member CSANormalDocument
+    owner_type inheritance
+  }
+  association {
+    owner BibliographicItem
+    member CSABibliographicItem
+    owner_type inheritance
+  }
+  
+  association {
+    owner CSANormalDocument
+    member CSABibliographicItem
+    owner_type direct
+  }
+  
+  association {
+    owner CSABibliographicItem
+    member CSACommittee
+    owner_type direct
+  }
+  association {
+    owner CSABibliographicItem
+    member CSADocumentType
+    owner_type direct
+  }
+  
+  association {
+    owner CSACommittee
+    member CSACommitteeType
+    owner_type direct
+  }
+  
+}
